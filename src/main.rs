@@ -12,6 +12,10 @@ fn main() {
         if input.trim().eq("exit 0") {
             break;
         }
+        if input.starts_with("echo ") {
+            println!("{}", input[5..].trim());
+            continue;
+        }
         println!("{}: command not found", input.trim());
     }
 }
